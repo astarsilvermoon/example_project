@@ -1,5 +1,7 @@
 package ru.bellintegrator.practice.offices.model;
 
+import ru.bellintegrator.practice.organizations.model.Organization;
+
 import javax.persistence.*;
 
 /**
@@ -31,6 +33,9 @@ public class Office {
     @Version
     private Integer version;
 
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name="org_id")
+    private Organization organizationId;
 
     public Office(){
 
@@ -82,5 +87,13 @@ public class Office {
 
     public void setVersion(Integer version) {
         this.version = version;
+    }
+
+    public Organization getOrganizationId() {
+        return organizationId;
+    }
+
+    public void setOrganizationId(Organization organizationId) {
+        this.organizationId = organizationId;
     }
 }

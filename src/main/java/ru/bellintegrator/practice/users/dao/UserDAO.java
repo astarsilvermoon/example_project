@@ -33,4 +33,10 @@ public interface UserDAO {
      * @param user
      */
     void saveUser(User user);
+
+    /**
+     * Удалить пользователя
+     *
+     */
+    void  deleteUser(User user);
 }

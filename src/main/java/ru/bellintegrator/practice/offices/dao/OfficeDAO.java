@@ -31,4 +31,8 @@ public interface OfficeDAO {
      */
     void saveOffice(Office office);
 
+    /***
+     * Удалить офис
+     */
+    void deleteOffice(Office office);
 }

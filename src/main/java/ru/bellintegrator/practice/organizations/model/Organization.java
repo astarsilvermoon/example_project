@@ -46,10 +46,6 @@ public class Organization {
     @Version
     private Integer version;
 
-    @OneToMany
-    private List<Office> offices;
-
-
     public Organization(){
 
     }

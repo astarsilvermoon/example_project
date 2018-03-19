@@ -42,4 +42,11 @@ public class UserDAOImpl implements UserDAO {
     public void saveUser(User user) {
         em.persist(user);
     }
+
+    @Override
+    public void deleteUser(User user) {
+        em.getTransaction().begin();
+        em.remove(user);
+        em.getTransaction().commit();
+    }
 }

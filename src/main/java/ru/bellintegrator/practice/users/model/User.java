@@ -51,11 +51,11 @@ public class User {
     private char[] password;
 
 
-    /*Не забыть проставить связи onetomany или manytoone и остальной маппинг*/
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name="office_id")
     private Office office;
 
-    @OneToMany
+    @OneToMany(mappedBy="user",fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     private List<UserDoc> userDocs;
 
     public User(){
@@ -148,6 +148,31 @@ public class User {
 
     public void setOfficeId(Office office) {
         this.office = office;
+    }
+
+    public Office getOffice() {
+        return office;
+    }
+
+    public void setOffice(Office office) {
+        this.office = office;
+    }
+
+    public List<UserDoc> getUserDocs() {
+        return userDocs;
+    }
+
+    public void setUserDocs(List<UserDoc> userDocs) {
+        this.userDocs = userDocs;
+    }
+
+    public void addUserDoc(UserDoc doc) {
+        getUserDocs().add(doc);
+        doc.setUser(this);
+    }
+    public void removeUserDoc(UserDoc doc) {
+        getUserDocs().remove(doc);
+        doc.setUser(null);
     }
 
 }

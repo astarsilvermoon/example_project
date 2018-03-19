@@ -19,7 +19,8 @@ public class UserDoc {
     @Column(name= "Id")
     private Long id;
 
-    @OneToOne //?
+    @OneToOne
+    @JoinColumn(name="doc_type_id")
     private DocType docType;
 
     @Column(name = "doc_date")
@@ -29,11 +30,16 @@ public class UserDoc {
     @Column(name = "doc_number")
     private String DocNumber;
 
-    @OneToOne //?
+    @OneToOne
+    @JoinColumn(name="country_code_id")
     private CountryCode countryCode;
 
     @Version
     private Integer version;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name="user_id")
+    private User user;
 
     public UserDoc(){
 
@@ -85,5 +91,13 @@ public class UserDoc {
 
     public void setVersion(Integer version) {
         this.version = version;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

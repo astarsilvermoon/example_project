@@ -41,4 +41,11 @@ public class OrganizationDAOImpl implements OrganizationDAO {
     public void saveOrg(Organization org) {
         em.persist(org);
     }
+
+    @Override
+    public void deleteOrg(Organization org) {
+        em.getTransaction().begin();
+        em.remove(org);
+        em.getTransaction().commit();
+    }
 }

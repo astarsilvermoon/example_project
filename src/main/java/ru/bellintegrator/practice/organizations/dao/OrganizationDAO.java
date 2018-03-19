@@ -29,4 +29,10 @@ public interface OrganizationDAO {
      **/
     void saveOrg(Organization org);
 
+    /**
+     * Удалить организацию
+     *
+     */
+    void deleteOrg(Organization org);
+
 }
