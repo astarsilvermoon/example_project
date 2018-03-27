@@ -1720,6 +1720,7 @@ Caused by: org.h2.jdbc.JdbcSQLException: Неверное имя пользов�
 Wrong user name or password [28000-196]
 	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
 	... 30 more
+<<<<<<< HEAD
 2018-03-17 10:20:50 jdbc[3]: exception
 java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supported.
 	at org.h2.jdbc.JdbcConnection.setClientInfo(JdbcConnection.java:1740)
@@ -2291,3 +2292,5 @@ java.sql.SQLClientInfoException: Client info name 'ApplicationName' not supporte
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
 	at java.lang.Thread.run(Thread.java:745)
+=======
+>>>>>>> bdb66d04fe95f5cf07156f02d0256a0da3de9408

@@ -142,6 +142,9 @@ public class User {
         this.password = password;
     }
 
+    public Office getOfficeId() {
+        return office;
+    }
 
     public void setOfficeId(Office office) {
         this.office = office;

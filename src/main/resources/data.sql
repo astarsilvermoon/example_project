@@ -13,6 +13,7 @@ INSERT INTO office (id, name, phone, is_active, address, org_id, version) VALUES
 INSERT INTO office (id, name, phone, is_active, address, org_id, version) VALUES (3, 'Страхстрой-офис', '201010', true, 'ул.Лядова', 2, 1);
 
 
+<<<<<<< HEAD
 INSERT INTO doc_type (id, name, code, version) VALUES (1, 'Паспорт гражданина Российской Федерации','21',1);
 INSERT INTO doc_type (id, name, code, version) VALUES (2, 'Военный билет','07',1);
 INSERT INTO doc_type (id, name, code, version) VALUES (3, 'Иные документы','91',1);
@@ -23,6 +24,18 @@ INSERT INTO country_code (id, name, code, version) VALUES (2, 'ИНДИЯ','356'
 INSERT INTO country_code (id, name, code, version) VALUES (3, 'БЕЛАРУСЬ','112',1);
 INSERT INTO country_code (id, name, code, version) VALUES (4, 'АВСТРАЛИЯ','036',1);
 INSERT INTO country_code (id, name, code, version) VALUES (5, 'КАЗАХСТАН','398',1);
+=======
+INSERT INTO doc_type (id, name, code) VALUES (1, 'Паспорт гражданина Российской Федерации','21');
+INSERT INTO doc_type (id, name, code) VALUES (2, 'Военный билет','07');
+INSERT INTO doc_type (id, name, code) VALUES (3, 'Иные документы','91');
+
+
+INSERT INTO country_code (id, name, code) VALUES (1, 'РОССИЯ','643');
+INSERT INTO country_code (id, name, code) VALUES (2, 'ИНДИЯ','356');
+INSERT INTO country_code (id, name, code) VALUES (3, 'БЕЛАРУСЬ','112');
+INSERT INTO country_code (id, name, code) VALUES (4, 'АВСТРАЛИЯ','036');
+INSERT INTO country_code (id, name, code) VALUES (5, 'КАЗАХСТАН','398');
+>>>>>>> bdb66d04fe95f5cf07156f02d0256a0da3de9408
 
 
 

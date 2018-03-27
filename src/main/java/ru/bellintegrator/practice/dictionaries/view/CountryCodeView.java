@@ -11,12 +11,12 @@ public class CountryCodeView {
 
     //ToDo как возвращать список значений во вью?
 
-    public CountryCodeView(){
+    public CountryCodeView() {
 
     }
 
 
-    public CountryCodeView(String name, String code){
+    public CountryCodeView(String name, String code) {
         this.name = name;
         this.code = code;
     }

@@ -1,6 +1,7 @@
 package ru.bellintegrator.practice.offices.dao;
 
 import ru.bellintegrator.practice.offices.model.Office;
+
 import ru.bellintegrator.practice.offices.view.OfficeView;
 
 import java.util.List;
@@ -14,12 +15,14 @@ public interface OfficeDAO {
      * Получить список офисов по id организации
      *
      */
+
     List<Office> getOfficesByOrgId(Long orgId, OfficeView office) throws Exception;
 
     /**
      * Получить офис по его id
      */
      Office getOfficeById(Long id) throws Exception;
+
 
     /**
      * Изменить офис

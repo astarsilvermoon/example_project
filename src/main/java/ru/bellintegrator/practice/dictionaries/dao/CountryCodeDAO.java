@@ -9,5 +9,6 @@ import java.util.List;
  */
 
 public interface CountryCodeDAO {
+
     List<CountryCode> getAll();
 }

@@ -9,6 +9,7 @@ public class OrganizationView {
     public String name;
     public String inn;
     public Boolean isActive;
+
     public String fullName;
     public String kpp;
     public String address;
@@ -37,6 +38,7 @@ public class OrganizationView {
         this.address = address;
         this.phone = phone;
     }
+
 
     public String getPhone() {
         return phone;
@@ -119,4 +121,5 @@ public class OrganizationView {
                 ", phone='" + phone + '\'' +
                 '}';
     }
+
 }

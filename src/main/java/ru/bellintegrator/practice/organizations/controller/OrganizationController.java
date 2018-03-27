@@ -18,5 +18,4 @@ public interface OrganizationController {
 
     ResponseView delete(Long id);
 
-
 }

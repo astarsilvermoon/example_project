@@ -1,6 +1,5 @@
 package ru.bellintegrator.practice.users.controller;
 
-
 import org.springframework.web.bind.annotation.RequestBody;
 import ru.bellintegrator.practice.universal.view.ResponseView;
 import ru.bellintegrator.practice.users.view.UserView;
@@ -20,6 +19,5 @@ public interface UserController {
     ResponseView delete(Long id);
 
     ResponseView save(UserView user);
-
 
 }

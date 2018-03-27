@@ -8,5 +8,6 @@ import java.util.List;
  * Created by Alena on 12.03.2018.
  */
 public interface DocTypeDAO {
+
     List<DocType> getAll();
 }

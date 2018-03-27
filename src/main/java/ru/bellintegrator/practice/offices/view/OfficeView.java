@@ -1,5 +1,6 @@
 package ru.bellintegrator.practice.offices.view;
 
+<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
@@ -98,4 +99,7 @@ public class OfficeView {
                 ", address='" + address + '\'' +
                 '}';
     }
+=======
+public class OfficeView {
+>>>>>>> bdb66d04fe95f5cf07156f02d0256a0da3de9408
 }
