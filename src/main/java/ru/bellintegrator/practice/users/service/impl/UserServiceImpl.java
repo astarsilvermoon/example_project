@@ -74,32 +74,32 @@ public class UserServiceImpl implements UserService{
     public UserView getById(Long id) {
         User user = null;
         UserView view = null;
-           if(id!=null) {
-               user = dao.getUserById(id);
-               if(user!=null) {
-                   view = setUserViewFromUser(user);
-               }else throw  new UserException("Пользователь с id=" + id + "не существует");
-           }else{
-                throw new UserException("Идентификатор пользователя NULL");
-            }
-            return view;
+        if(id!=null) {
+            user = dao.getUserById(id);
+            if(user!=null) {
+                view = setUserViewFromUser(user);
+            }else throw  new UserException("Пользователь с id=" + id + "не существует");
+        }else{
+            throw new UserException("Идентификатор пользователя NULL");
+        }
+        return view;
 
     }
 
     @Override
     public boolean update(UserView view) {
         boolean res = false;
-           User finded = dao.getUserById(view.getId());//то что нашли в базе
-           if(finded!=null && view!=null){
+        User finded = dao.getUserById(view.getId());//то что нашли в базе
+        if(finded!=null && view!=null){
 
             User user = setUserFromView(finded, view);
-                if(user!=null) {
-                     res = checkRes(dao.updateUser(user));
-                    if (!res)
-                        throw  new UserException("Не удалось обновить данные о работнике");
-                    else log.info("Update user is successed");
-                    return res;
-                }
+            if(user!=null) {
+                res = checkRes(dao.updateUser(user));
+                if (!res)
+                    throw  new UserException("Не удалось обновить данные о работнике");
+                else log.info("Update user is successed");
+                return res;
+            }
         }else throw new UserException("Введенные данные пусты. Обновить невозможно");
         return res;
     }
@@ -113,18 +113,18 @@ public class UserServiceImpl implements UserService{
                 log.info("Удаление работника прошло успешно");
             }else throw  new UserException("Не удалось найти работника с id=" + id);
         }else  throw  new UserException("Не удалось удалить работника. Идентификатор NULL");
-            return true;
+        return true;
     }
 
     @Override
     public boolean save(UserView view) {
-           if(view!=null) {
-           User user = setUserFromView(new User(), view);
-           if(user!=null) {
-               dao.saveUser(user);
-               log.info("Сохранение данных работника прошло успешно");
-           }
-       }else throw  new UserException("Введенные данные пусты");
+        if(view!=null) {
+            User user = setUserFromView(new User(), view);
+            if(user!=null) {
+                dao.saveUser(user);
+                log.info("Сохранение данных работника прошло успешно");
+            }
+        }else throw  new UserException("Введенные данные пусты");
         return true;//проверку
     }
 
@@ -151,7 +151,7 @@ public class UserServiceImpl implements UserService{
                     user.setOffice(office);
 
                 List<User> users = dao.getAll(office.getId(), new UserFilterView(office.getId(),  user.getFirstName(), user.getLastName(),
-                         user.getMiddleName(), user.getPosition(), null, null));
+                        user.getMiddleName(), user.getPosition(), null, null));
                 if(users!=null){
                     UserDoc userDoc = userDocDAO.getDocsByUser(users.get(0).getId());
                     if(userDoc!=null) {
@@ -191,14 +191,14 @@ public class UserServiceImpl implements UserService{
         view.setPhone(user.getPhone()!= null ? user.getPhone() : "");
 
         UserDoc doc = user.getUserDoc();
-            if (doc != null) {
-                view.setDocName(doc.getDocType().getName() != null ? doc.getDocType().getName() : "");
+        if (doc != null) {
+            view.setDocName(doc.getDocType().getName() != null ? doc.getDocType().getName() : "");
 
-                view.setDocNumber(doc.getDocNumber() != null ? doc.getDocNumber() : "");
-                view.setDocDate(doc.getDocDate());
+            view.setDocNumber(doc.getDocNumber() != null ? doc.getDocNumber() : "");
+            view.setDocDate(doc.getDocDate());
 
-                view.setCitizenshipName(doc.getCountryCode().getName() != null ? doc.getCountryCode().getName() : "");
-                view.setCitizenshipCode(doc.getCountryCode().getCode() != null ? doc.getCountryCode().getCode() : "");
+            view.setCitizenshipName(doc.getCountryCode().getName() != null ? doc.getCountryCode().getName() : "");
+            view.setCitizenshipCode(doc.getCountryCode().getCode() != null ? doc.getCountryCode().getCode() : "");
         }
 
         return view;

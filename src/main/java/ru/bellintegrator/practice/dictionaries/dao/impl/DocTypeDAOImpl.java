@@ -6,7 +6,6 @@ import ru.bellintegrator.practice.dictionaries.dao.DocTypeDAO;
 import ru.bellintegrator.practice.dictionaries.model.DocType;
 
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -46,7 +45,7 @@ public class DocTypeDAOImpl implements DocTypeDAO {
 
         List<Predicate> predicates = new ArrayList<Predicate>();
         if(name!= null && !name.equals(""))
-        predicates.add(builder.equal(root.get("name"), name));
+            predicates.add(builder.equal(root.get("name"), name));
 
         if(code!= null && !code.equals(""))
             predicates.add(builder.equal(root.get("code"), code));

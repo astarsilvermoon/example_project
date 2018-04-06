@@ -24,7 +24,7 @@ public class OrganizationDAOImpl implements OrganizationDAO {
 
     @Autowired
     public OrganizationDAOImpl(EntityManager em){
-       this.em = em;
+        this.em = em;
     }
 
     @Override
@@ -35,20 +35,20 @@ public class OrganizationDAOImpl implements OrganizationDAO {
         cq = cq.select(root).distinct(true);
 
         List<Predicate> predicates = new ArrayList<Predicate>();
-       if(org!=null) {
-           if (org.getName() != null) {
-               predicates.add(qb.equal(root.get("name"), org.getName()));
-           }
-           if (org.getInn() != null) {
-               predicates.add(qb.equal(root.get("inn"), org.getInn()));
-           }
-           if (org.getIsActive() != null) {
-               predicates.add(qb.equal(root.get("isActive"), org.getIsActive()));
-           }
-           cq.where(qb.and(predicates.toArray(new Predicate[]{})));
-       }
+        if(org!=null) {
+            if (org.getName() != null) {
+                predicates.add(qb.equal(root.get("name"), org.getName()));
+            }
+            if (org.getInn() != null) {
+                predicates.add(qb.equal(root.get("inn"), org.getInn()));
+            }
+            if (org.getIsActive() != null) {
+                predicates.add(qb.equal(root.get("isActive"), org.getIsActive()));
+            }
+            cq.where(qb.and(predicates.toArray(new Predicate[]{})));
+        }
         TypedQuery<Organization> query = em.createQuery(cq);
-       List<Organization> list = null;
+        List<Organization> list = null;
         if(query.getFirstResult()>=0){
             list = query.getResultList();
         }
@@ -92,7 +92,7 @@ public class OrganizationDAOImpl implements OrganizationDAO {
     @Override
     @Transactional
     public Boolean saveOrg(Organization org) {
-       em.persist(org);
+        em.persist(org);
         return true;
 
     }
@@ -100,6 +100,6 @@ public class OrganizationDAOImpl implements OrganizationDAO {
     @Override
     @Transactional
     public void deleteOrg(Long id) {
-          em.remove(getOrgById(id));
+        em.remove(getOrgById(id));
     }
 }

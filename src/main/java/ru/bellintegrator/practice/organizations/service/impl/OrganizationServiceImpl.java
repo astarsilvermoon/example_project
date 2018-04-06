@@ -54,15 +54,15 @@ public class OrganizationServiceImpl implements OrganizationService {
 
     @Override
     public OrganizationView getOrgById(Long id) {
-            OrganizationView view = null;
-            if(id!=null) {
-                Organization org = dao.getOrgById(id);
-                if (org != null) {
-                    view = setViewFromOrg(org);
-                    log.info("Поиск организации с id=" + id);
-                    log.info(view.toString());
-                } else throw new OrganizationException("Организация не найдена");
-            }else throw new OrganizationException("Идентификатор организации NULL");
+        OrganizationView view = null;
+        if(id!=null) {
+            Organization org = dao.getOrgById(id);
+            if (org != null) {
+                view = setViewFromOrg(org);
+                log.info("Поиск организации с id=" + id);
+                log.info(view.toString());
+            } else throw new OrganizationException("Организация не найдена");
+        }else throw new OrganizationException("Идентификатор организации NULL");
 
         return view;
     }
@@ -74,10 +74,10 @@ public class OrganizationServiceImpl implements OrganizationService {
         if(view!=null && finded!=null) {
             Organization org = setOrgFromView(finded, view);
             if(org!=null) {
-                 res = checkRes(dao.updateOrg(org));
+                res = checkRes(dao.updateOrg(org));
                 if (!res)
                     throw  new OrganizationException("Введенные данные об организации пусты");
-               else {
+                else {
                     log.info("Обновление данных об организации прошло успешно");
                     return res;
                 }
@@ -90,8 +90,8 @@ public class OrganizationServiceImpl implements OrganizationService {
         if(view!=null) {
             Organization organization = setOrgFromView(new Organization(), view);
             if(organization!=null)
-                    dao.saveOrg(organization);
-                    log.info("Сохранение данных об организации прошло успешно");
+                dao.saveOrg(organization);
+            log.info("Сохранение данных об организации прошло успешно");
             return true; //проверка
         } else throw  new OrganizationException ("Введенные данные об организации пусты");
     }
@@ -117,7 +117,7 @@ public class OrganizationServiceImpl implements OrganizationService {
     public Organization setOrgFromView(Organization organization, OrganizationView view){
         if(view!=null) {
             if(view.getName()!=null)
-            organization.setName(view.getName());
+                organization.setName(view.getName());
             organization.setFullName(view.getFullName());
             organization.setInn(view.getInn());
             organization.setKpp(view.getKpp());

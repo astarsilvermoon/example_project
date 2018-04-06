@@ -7,15 +7,15 @@ CREATE TABLE IF NOT EXISTS account(
 	activation_code VARCHAR(100) NOT NULL,
 	is_activated BOOLEAN NOT NULL,
 	version INTEGER NOT NULL
-	
+
 );
 
 CREATE TABLE IF NOT EXISTS user (
-    id INTEGER  PRIMARY KEY AUTO_INCREMENT,
-    first_name    VARCHAR(50) NOT NULL,
-    last_name VARCHAR(100) NOT NULL,
+	id INTEGER  PRIMARY KEY AUTO_INCREMENT,
+	first_name    VARCHAR(50) NOT NULL,
+	last_name VARCHAR(100) NOT NULL,
 	middle_name VARCHAR(50),
-    position        VARCHAR(100)  NOT NULL,
+	position        VARCHAR(100)  NOT NULL,
 	phone VARCHAR(25),
 	office_id INTEGER NOT NULL,
 	is_identified BOOLEAN NOT NULL,
@@ -73,7 +73,7 @@ CREATE TABLE IF NOT EXISTS user_docs(
 	doc_date DATE NOT NULL,
 	country_code_id INTEGER NOT NULL,
 	version INTEGER NOT NULL
-	
+
 );
 
 CREATE INDEX IX_user_id ON user_docs (user_id);

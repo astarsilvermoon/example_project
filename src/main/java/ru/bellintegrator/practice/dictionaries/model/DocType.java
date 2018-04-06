@@ -27,9 +27,9 @@ public class DocType implements Serializable {
     @Version
     private Integer version =0;
 
-   public DocType(){
+    public DocType(){
 
-   }
+    }
 
     public String getName() {
         return name;

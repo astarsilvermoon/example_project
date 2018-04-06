@@ -27,8 +27,8 @@ public class DocTypeControllerImpl implements DocTypeController {
 
     @Autowired
     public  DocTypeControllerImpl(DocTypeService service){
-       this.service = service;
-   }
+        this.service = service;
+    }
 
     @Override
     @PostMapping

@@ -62,9 +62,9 @@ public class OfficeServiceImpl implements OfficeService{
         if (id != null) {
             Office office = dao.getOfficeById(id);
             if(office!=null) {
-                 view = setViewFromOffice(office);
-                 log.info("Получение офиса с идентификатором =" + id);
-             }else throw new OfficeException("Офис с идентификатором = " + id + " не найден");
+                view = setViewFromOffice(office);
+                log.info("Получение офиса с идентификатором =" + id);
+            }else throw new OfficeException("Офис с идентификатором = " + id + " не найден");
         }else throw new OfficeException("Идентификатор офиса = " + id + " NULL");
         return view;
     }

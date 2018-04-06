@@ -20,7 +20,7 @@ public interface OfficeDAO {
     /**
      * Получить офис по его id
      */
-     Office getOfficeById(Long id);
+    Office getOfficeById(Long id);
 
     /**
      * Изменить офис

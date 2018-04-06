@@ -6,7 +6,6 @@ import ru.bellintegrator.practice.dictionaries.dao.CountryCodeDAO;
 import ru.bellintegrator.practice.dictionaries.model.CountryCode;
 
 import javax.persistence.EntityManager;
-import javax.persistence.NoResultException;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
@@ -54,9 +53,9 @@ public class CountryCodeDAOImpl implements CountryCodeDAO{
         criteria.select(root).where(builder.and(predicates.toArray(new Predicate[]{})));
         TypedQuery<CountryCode> query = em.createQuery(criteria);
         CountryCode countryCode = null;
-            if(query.getFirstResult()>=0){
-             countryCode = query.getSingleResult();
+        if(query.getFirstResult()>=0){
+            countryCode = query.getSingleResult();
         }
-            return countryCode;
+        return countryCode;
     }
 }

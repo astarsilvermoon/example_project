@@ -66,7 +66,7 @@ public class OfficeDAOImpl implements OfficeDAO {
     @Override
     public Office getOfficeById(Long id){
         Office office = em.find(Office.class, id);
-            return office;
+        return office;
     }
     @Override
     @Transactional
@@ -84,7 +84,7 @@ public class OfficeDAOImpl implements OfficeDAO {
             update.set("phone", office.getPhone());
         if(office.getIsActive() != null)
             update.set("isActive" , office.getIsActive());
-       return this.em.createQuery(update).executeUpdate();
+        return this.em.createQuery(update).executeUpdate();
     }
 
     @Override
@@ -97,6 +97,6 @@ public class OfficeDAOImpl implements OfficeDAO {
     @Override
     @Transactional
     public void deleteOffice(Long id) {
-            em.remove(getOfficeById(id));
+        em.remove(getOfficeById(id));
     }
 }

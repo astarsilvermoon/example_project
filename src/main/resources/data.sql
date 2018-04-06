@@ -1,4 +1,4 @@
-INSERT INTO account(id, is_identified, login, password, name,  activation_code, is_activated, version) VALUES (1, true, 'general@gmail.com', 'NUU4ODQ4OThEQTI4MDQ3MTUxRDBFNTZGOERDNjI5Mjc3MzYwM0QwRDZBQUJCREQ2MkExMUVGNzIxRDE1NDJEOA==','Иван', '8D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C92', true, 1); 
+INSERT INTO account(id, is_identified, login, password, name,  activation_code, is_activated, version) VALUES (1, true, 'general@gmail.com', 'NUU4ODQ4OThEQTI4MDQ3MTUxRDBFNTZGOERDNjI5Mjc3MzYwM0QwRDZBQUJCREQ2MkExMUVGNzIxRDE1NDJEOA==','Иван', '8D969EEF6ECAD3C29A3A629280E686CF0C3F5D5A86AFF3CA12020C923ADC6C92', true, 1);
 /*password=password, activation_code=123456*/
 INSERT INTO account(id, is_identified, login, password, name, activation_code,is_activated, version) VALUES (2, true, 'silver@mail.ru', 'NzhDREU2NEMzRTQ3RjJDQkZEOURBNzIxRjU0QUFDREUzMzc3OTkxNjY4M0M3OURFODY5NjI4OThGRUVGQUMyMQ==','Сергей', '5694D08A2E53FFCAE0C3103E5AD6F6076ABD960EB1F8A56577040BC1028F702B', true, 1);
 /*password=silver, activation_code=code*/

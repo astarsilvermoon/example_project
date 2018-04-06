@@ -70,7 +70,7 @@ public class UserDAOImpl implements UserDAO {
                     predicates.add(qb.equal(countryCode.get("code"), user.getCitizenshipCode()));
                 }
             }
-            }
+        }
         cq.where(qb.and(predicates.toArray(new Predicate[]{})));
         TypedQuery<User> query = em.createQuery(cq);
         List<User> users = null;
@@ -82,7 +82,7 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public User getUserById(Long id) {
         User user = em.find(User.class, id);
-     return user;
+        return user;
 
     }
 
@@ -106,7 +106,7 @@ public class UserDAOImpl implements UserDAO {
             if (user.getPhone() != null)
                 update.set("phone", user.getPhone());
         }
-      return this.em.createQuery(update).executeUpdate();
+        return this.em.createQuery(update).executeUpdate();
     }
 
     @Override
@@ -119,7 +119,7 @@ public class UserDAOImpl implements UserDAO {
     @Override
     @Transactional
     public void deleteUser(Long id) {
-            em.remove(getUserById(id));
+        em.remove(getUserById(id));
     }
 
 }

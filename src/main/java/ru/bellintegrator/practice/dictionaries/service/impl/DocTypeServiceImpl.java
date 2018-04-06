@@ -31,7 +31,7 @@ public class DocTypeServiceImpl implements DocTypeService {
     }
 
     @Override
-        public List<DocTypeView> getAll() {
+    public List<DocTypeView> getAll() {
         List<DocType> list = dao.getAll();
         if (list != null) {
 

@@ -73,8 +73,8 @@ public class UserControllerImpl implements UserController {
     public ResponseEntity delete(@RequestBody UserView view) {
         ResponseView response = new ResponseView();
         try {
-                boolean res = service.delete(view.getId());
-                response.setResult(res);
+            boolean res = service.delete(view.getId());
+            response.setResult(res);
         }catch (UserException e){
             response.setError(e.getMessage());
         }
