@@ -9,9 +9,23 @@ import org.springframework.core.task.TaskExecutor;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor;
 import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
-import ru.bellintegrator.practice.controller.impl.DummyControllerImpl;
-import ru.bellintegrator.practice.dao.impl.PersonDAOImpl;
-import ru.bellintegrator.practice.service.impl.DummyServiceImpl;
+import ru.bellintegrator.practice.dictionaries.controller.impl.CountryCodeControllerImpl;
+import ru.bellintegrator.practice.dictionaries.controller.impl.DocTypeControllerImpl;
+import ru.bellintegrator.practice.dictionaries.dao.CountryCodeDAO;
+import ru.bellintegrator.practice.dictionaries.dao.impl.CountryCodeDAOImpl;
+import ru.bellintegrator.practice.dictionaries.dao.impl.DocTypeDAOImpl;
+import ru.bellintegrator.practice.dictionaries.service.impl.CountryCodeServiceImpl;
+import ru.bellintegrator.practice.dictionaries.service.impl.DocTypeServiceImpl;
+import ru.bellintegrator.practice.offices.controller.impl.OfficeControllerImpl;
+import ru.bellintegrator.practice.offices.dao.impl.OfficeDAOImpl;
+import ru.bellintegrator.practice.offices.service.OfficeService;
+import ru.bellintegrator.practice.offices.service.impl.OfficeServiceImpl;
+import ru.bellintegrator.practice.organizations.controller.impl.OrganizationControllerImpl;
+import ru.bellintegrator.practice.organizations.dao.impl.OrganizationDAOImpl;
+import ru.bellintegrator.practice.organizations.service.impl.OrganizationServiceImpl;
+import ru.bellintegrator.practice.users.controller.impl.UserControllerImpl;
+import ru.bellintegrator.practice.users.dao.impl.UserDAOImpl;
+import ru.bellintegrator.practice.users.service.impl.UserServiceImpl;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.spi.DocumentationType;
@@ -25,7 +39,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @EnableSwagger2
 @ImportResource("spring_mvc_config.xml")
 @SpringBootApplication
-@ComponentScan(basePackageClasses = {DummyControllerImpl.class, DummyServiceImpl.class, PersonDAOImpl.class})
+@ComponentScan("ru.bellintegrator.practice")
 public class Application {
 
     public static void main(String[] args) {
